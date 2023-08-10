@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+        input[type="text"], textarea, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+        <div id="response"></div>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+
+            // You can also add additional validation for email or other fields here if needed
+
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // For demonstration purposes, we'll just log the data to the console here.
+            // In a real-world scenario, you'd typically send this data to a server using AJAX.
+
+            console.log(data);
+
+            // Display a success message to the user
+            const responseDiv = document.getElementById("response");
+            responseDiv.innerHTML = "<p>Thank you for your message. We'll get back to you soon!</p>";
+
+            // Clear the form after submission
+            this.reset();
+        });
+    </script>
+</body>
+</html>

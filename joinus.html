@@ -1,0 +1,138 @@
+<html>
+<head>
+    <title>
+       WALSAM FIRE SAFETY LIMITED
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <div class="search">
+            <input class="srch" type="search" name="" placeholder="Type To text">
+            <a href="#"> <button class="btn">Search</button></a>
+            </div>
+        <div class="icon">
+             
+        </div>
+
+  
+            <div class="menu-bar">
+                <ul>    
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="#">About Us</a>
+                                    <div class="sub-menu-1">
+                                                <ul>
+                                                    <li><a href="mission.html">Mission Statement</a></li>
+                                                    <li><a href="mantra.html">Mantra</a></li>
+                                            
+
+                                                </ul>
+                                    </div>
+                            </li>
+                        
+                            <li><a href="#">Services</a>
+                            <div class="sub-menu-1">
+                                <ul>
+                                    <li><a href="#">Risk Assessment</a></li>
+                                    <li><a href="#">Basic Fire Safety Awareness Training</a></li>
+                                </ul>
+                            </div>
+        
+                        </li>
+                            <li><a href="#">Clients</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Our Team</a></li>
+                </ul>      
+        
+
+            
+            </div>
+            
+      <div class="title">
+        <h1><span>Register Here</span> </h1>
+      </div>
+       
+          </div>
+
+</div>
+
+<div class="form2">
+    <form id="register">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="company" placeholder="Company" required>
+        <input type="text" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+
+
+<!--
+    <input type="text" id="company"  placeholder="Company Name" required>
+    <input type="text" id ="address"  placeholder="Address" required>
+    <input type="email" id  ="email"  placeholder=" Your email" required>
+    <input type="text" id ="phonenumber"  placeholder=" Phone Number " required>
+    <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>   --> 
+    <button type="submit" class="btnn " > Send </button>
+    <div id="response"></div>
+</form>
+
+
+</div>
+
+<script>
+    document.getElementById("register").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(this);
+
+        // You can also add additional validation for email or other fields here if needed
+
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        // For demonstration purposes, we'll just log the data to the console here.
+        // In a real-world scenario, you'd typically send this data to a server using AJAX.
+
+        console.log(data);
+
+        // Display a success message to the user
+        const responseDiv = document.getElementById("response");
+        responseDiv.innerHTML = "<p>Thank you for your message. We'll get back to you soon!</p>";
+
+        // Clear the form after submission
+        this.reset();
+    });
+</script>
+
+                    <!--<script src="https://smtpjs.com/v3/smtp.js" ></script>
+                    <script>
+                    function sendEmail()
+                    {
+                    Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "adeshina4islam@gmail.com",
+                    Password : "isl@miy@t",
+                    To : 'toyin_ng@yahoo.com',
+                    From : document.getElementById("email").value,
+                    Subject : "New Risk Assessment",
+                    Body : "Company:" + document.getElementById("company").value
+                    + "<br> Email:" + document.getElementById("email").value
+                    + "<br> Phone:" + document.getElementById("phonenumber").value
+                    + "<br> Address :" + document.getElementById("address").value
+                    + "<br> Message :" + document.getElementById("message").value
+
+                    }).then(
+                    message => alert("message sent successfully")
+                    );
+                    }
+                    </script>
+                    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> -->
+
+
+                <div class="bottom">
+                    <p>(c) Copyright Protected</p>
+                </div>
+                
+
+</body>
+</head>
+</html>
